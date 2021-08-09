@@ -1,0 +1,110 @@
+html {
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+}
+.header {
+  background: url(/img/banner.jpg) no-repeat top;
+  width: 100%;
+  height: 100vh;
+}
+.wrapper {
+  width: 1300px;
+  margin: 0 auto;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_title,
+.header_desc {
+  margin: 0;
+  color: #fff;
+}
+.header_link {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 19px;
+}
+.author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* form popup */
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popup__area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+a {
+  text-decoration: none;
+}
+.popup__body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+.popup__content {
+  background-color: #fff;
+  color: #000;
+  max-width: 800px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.field {
+  height: 100%;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  display: block;
+  font-family: "Andada Pro", serif;
+  font-size: 17px;
+}
+.submit {
+  width: 100%;
+  display: block;
+  padding: 15px;
+  letter-spacing: 0.7px;
+  font-family: "Andada Pro", serif;
+  font-size: 17px;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: #a0a0a0;
+  transition: all 0.3s;
+}
+.submit:focus {
+  background-color: #a0a0a0;
+  transition: all 0.3s;
+}
+.popup__close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+}
+.popup__title {
+  font-size: 30px;
+  margin: 0px 0px 1em 0px;
+}
