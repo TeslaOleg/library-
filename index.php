@@ -1,6 +1,5 @@
 <?php 
-  session_start();
-  session_id(); 
+  session_start(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +31,7 @@
         </div>
       </header>
       <!-- form login modal -->
-      <form id="login" class="popup" action="list.php" method="post">
+      <form id="login" class="popup" action="/core/log.php" method="post">
         <a href="#header" class="popup__area"></a>
         <div class="popup__body">
           <div class="popup__content">
@@ -40,12 +39,12 @@
             <h2 class="popup__title">Вход</h2>
             <input type="text" name ="email" placeholder="Почта" class="field">
             <input type="text" name ="password" placeholder="Пароль" class="field">
-            <input type="submit" name ="done" value="Войти" class="submit">
+            <button type="submit">Войти</button>
           </div>
         </div>
       </form>
       <!-- form registr modal -->
-      <form id="register" class="popup" action="list.php" method="post">
+      <form id="register" class="popup" action="/core/reg.php" method="post">
         <a href="#header" class="popup__area">X</a>
         <div class="popup__body">
           <div class="popup__content">
@@ -54,11 +53,18 @@
             <input type="text" name ="bio" placeholder="Имя" class="field">
             <input type="text" name ="email" placeholder="Почта" class="field">
             <input type="text" name ="password" placeholder="Пароль" class="field">
-            <input type="submit" name ="done" value="Войти" class="submit">
+            <button type="submit">Регистрация</button>
           </div>
         </div>
       </form>
     </main>
+    
+    <pre>
+    <?php 
+      print_r($_SESSION);
+      ?>
+    </pre>
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   </body>
 </html>
