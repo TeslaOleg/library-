@@ -1,30 +1,27 @@
-<?php 
-    include "main.php";
+<?php
+include "main.php";
 
-    $key = array_search( $_POST["email"], array_column ( $_SESSION["users"], 'email' ) );
+$key = array_search($_POST["email"], array_column($_SESSION["users"], 'email'));
 
-    if($key === false ) {
+if ($key === false) {
 
-        var_dump($key);
-        
-        die("hui");
-        
-        return "Есть такой!";
-    } 
+    var_dump($key);
 
-    $user = $_SESSION["users"][$key];
+    die("eror");
 
-    // print_r([
-    //     $user["password"] , password_hash($_POST["password"] , PASSWORD_BCRYPT)
-    // ]);
-    // die();
+    return "Есть такой!";
+}
 
-    if( password_verify($_POST["password"], $user["password"]) ) {
-        $_SESSION["user"] = $user;
+$user = $_SESSION["users"][$key];
 
-        header('Location: '. "/");
-        die();
-    } else {
-       echo "все плохо" ;
-       die();
-    }
+
+if (password_verify($_POST["password"], $user["password"])) {
+    $_SESSION["user"] = $user;
+    $_SESSION["user"]["id"] = $key;
+
+    header('Location: ' . "/");
+    die();
+} else {
+    echo "все плохо";
+    die();
+}
