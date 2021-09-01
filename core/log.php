@@ -22,6 +22,6 @@ if (password_verify($_POST["password"], $user["password"])) {
     header('Location: ' . "/");
     die();
 } else {
-    echo "все плохо";
+    echo "не работает";
     die();
 }
